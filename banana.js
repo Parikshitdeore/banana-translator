@@ -15,7 +15,8 @@ var finalURL = constructURL(input)
 console.log(finalURL)
 
 fetch(finalURL)
-.then (response => response.json())
-.then (json=>{translateOutput.innertext = json.contens.translated;})
+.then(response => response.json())
+.then(json=>{var translatedText = json.contents.translated;
+    translateOutput.innerText = translatedText;})
 .catch(() => alert("Error. Try again after some time"))
 }
